@@ -37,7 +37,7 @@
             <content>
               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                      <children>
-                        <Button layoutX="139.0" layoutY="129.0" mnemonicParsing="false" text="Button" />
+                        <Button layoutX="139.0" layoutY="129.0" mnemonicParsing="false" onAction="#click" text="Click Me" />
                      </children>
                   </AnchorPane>
             </content>

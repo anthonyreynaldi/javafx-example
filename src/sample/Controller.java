@@ -5,6 +5,8 @@ import javafx.collections.ObservableList;
 import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
+import javafx.scene.control.Button;
+import javafx.scene.control.TextField;
 import javafx.scene.control.cell.ComboBoxListCell;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.KeyCode;
@@ -17,6 +19,10 @@ import sample.dao.MahasiswaDao;
 import sample.dao.MataKuliahDao;
 import sample.dao.NilaiDao;
 
+import java.awt.*;
+import java.io.IOException;
+import java.net.URI;
+import java.net.URISyntaxException;
 import java.sql.Connection;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -177,7 +183,7 @@ public class Controller {
         Nilai nilai = tableNilai.getSelectionModel().getSelectedItem();
 
         NilaiDao nilaiDao = new NilaiDao();
-        boolean result = nilaiDao.delete(new Nilai(nilai.getId(), nilai.getNrp(), nilai.getIdMatkul(), nilai.getNilai()));
+        boolean result = nilaiDao.delete(nilai);
 
         if (!result){
             success("Data Berhasil Dihapus");
@@ -186,5 +192,11 @@ public class Controller {
         }else {
             alert("Data Gagal Dihapus");
         }
+    }
+
+    @FXML
+    public void click() throws URISyntaxException, IOException {
+        Desktop desk = Desktop.getDesktop();
+        desk.browse(new URI("https://www.youtube.com/watch?v=dQw4w9WgXcQ"));
     }
 }
